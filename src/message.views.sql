@@ -1,4 +1,4 @@
-DROP VIEW IF EXISTS public.message_with_avatar RESTRICT;
+DROP VIEW IF EXISTS conreality.message_with_avatar RESTRICT;
 
-CREATE VIEW public.message_with_avatar AS
-  SELECT m.*, p.avatar FROM public.message m INNER JOIN public.player p ON m.sender = p.uuid;
+CREATE VIEW conreality.message_with_avatar AS
+  SELECT m.*, p.avatar FROM conreality.message m INNER JOIN conreality.player p ON m.sender = p.uuid;

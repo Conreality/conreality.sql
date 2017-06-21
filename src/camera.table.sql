@@ -1,8 +1,8 @@
-DROP TABLE IF EXISTS public.camera CASCADE;
+DROP TABLE IF EXISTS conreality.camera CASCADE;
 
-CREATE TABLE public.camera (
+CREATE TABLE conreality.camera (
   -- The camera's unique identifier.
-  uuid       uuid NOT NULL PRIMARY KEY REFERENCES public.object ON DELETE CASCADE,
+  uuid       uuid NOT NULL PRIMARY KEY REFERENCES conreality.object ON DELETE CASCADE,
   -- The camera's resolution (in 2D pixels).
   resolution point NULL,
   -- The camera's image format.

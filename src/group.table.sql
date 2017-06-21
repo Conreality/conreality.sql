@@ -1,6 +1,6 @@
-DROP TABLE IF EXISTS public.group CASCADE;
+DROP TABLE IF EXISTS conreality.group CASCADE;
 
-CREATE TABLE public.group (
+CREATE TABLE conreality.group (
   -- The group's unique identifier.
   uuid        uuid NOT NULL PRIMARY KEY,
   -- The group's designated label.

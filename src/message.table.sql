@@ -1,14 +1,14 @@
-DROP TABLE IF EXISTS public.message CASCADE;
+DROP TABLE IF EXISTS conreality.message CASCADE;
 
-CREATE TABLE public.message (
+CREATE TABLE conreality.message (
   -- The message's sequential identifier.
   id        bigserial NOT NULL PRIMARY KEY,
   -- The message's timestamp (in Zulu time).
   timestamp timestamp WITH TIME ZONE NOT NULL DEFAULT now(),
   -- The sender of the message (a player or asset; a zero UUID indicates the system).
-  sender    uuid NOT NULL REFERENCES public.object ON DELETE CASCADE,
+  sender    uuid NOT NULL REFERENCES conreality.object ON DELETE CASCADE,
   -- The message's contents as text.
   text      text NULL,
   -- The message's contents as audio.
-  audio     bigint NULL REFERENCES public.binary ON DELETE SET NULL
+  audio     bigint NULL REFERENCES conreality.binary ON DELETE SET NULL
 );

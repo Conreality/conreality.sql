@@ -1,6 +1,6 @@
-DROP TABLE IF EXISTS public.theater CASCADE;
+DROP TABLE IF EXISTS conreality.theater CASCADE;
 
-CREATE TABLE public.theater (
+CREATE TABLE conreality.theater (
   -- The theater's unique identifier.
   uuid     uuid NOT NULL PRIMARY KEY,
   -- The theater's designated label.

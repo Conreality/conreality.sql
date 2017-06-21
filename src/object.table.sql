@@ -1,23 +1,23 @@
-DROP TABLE IF EXISTS public.object CASCADE;
+DROP TABLE IF EXISTS conreality.object CASCADE;
 
-DROP TYPE IF EXISTS public.object_type RESTRICT;
+DROP TYPE IF EXISTS conreality.object_type RESTRICT;
 
-CREATE TYPE public.object_type AS ENUM (
+CREATE TYPE conreality.object_type AS ENUM (
   'asset',
   'camera',
   'player',
   'target'
 );
 
-CREATE TABLE public.object (
+CREATE TABLE conreality.object (
   -- The object's unique identifier.
   uuid        uuid NOT NULL PRIMARY KEY,
   -- The object's type.
   type        object_type NULL,
   -- The theater that the object is located in.
-  theater     uuid NULL REFERENCES public.theater ON DELETE SET NULL,
+  theater     uuid NULL REFERENCES conreality.theater ON DELETE SET NULL,
   -- The group, if any, that the object belongs to.
-  "group"     uuid NULL REFERENCES public.group ON DELETE SET NULL,
+  "group"     uuid NULL REFERENCES conreality.group ON DELETE SET NULL,
   -- The object's designated label.
   label       varchar(31) NULL CHECK (label <> ''),
   -- The object's current position (as 3D coordinates relative to its theater).
