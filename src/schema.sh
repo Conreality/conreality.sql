@@ -1,5 +1,6 @@
 #!/bin/sh
-function load { echo "-- $1"; echo; cat "$1"; echo; }
+basedir=`dirname $0`
+function load { echo "-- $1"; echo; cat "$basedir/$1"; echo; }
 
 # Schema
 echo "DROP SCHEMA IF EXISTS conreality CASCADE;"; echo
