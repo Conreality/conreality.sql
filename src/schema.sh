@@ -1,7 +1,7 @@
 #!/bin/sh
 echo "DROP SCHEMA IF EXISTS conreality CASCADE;"; echo
 echo "CREATE SCHEMA conreality;"; echo
-cat extensions.sql;    echo
+cat _extensions.sql;   echo
 
 # dependency order:
 cat binary.table.sql;  echo
