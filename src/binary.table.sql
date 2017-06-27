@@ -15,7 +15,7 @@ CREATE TABLE conreality.binary (
   -- The binary's unique identifier (SHA-256 fingerprint).
   sha256 bytea NOT NULL CHECK (length(sha256) = 32) UNIQUE,
   -- The binary's MIME content type.
-  type binary_type NOT NULL,
+  type conreality.binary_type NOT NULL,
   -- The binary data.
   data bytea NOT NULL
 );

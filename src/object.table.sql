@@ -13,7 +13,7 @@ CREATE TABLE conreality.object (
   -- The object's unique identifier.
   uuid        uuid NOT NULL PRIMARY KEY,
   -- The object's type.
-  type        object_type NULL,
+  type        conreality.object_type NULL,
   -- The theater that the object is located in.
   theater     uuid NULL REFERENCES conreality.theater ON DELETE SET NULL,
   -- The group, if any, that the object belongs to.
