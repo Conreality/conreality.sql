@@ -1,0 +1,13 @@
+# https://docs.travis-ci.com/user/database-setup/
+language: c
+dist: trusty
+sudo: false
+addons:
+  postgresql: 9.6
+services:
+  - postgresql
+before_script:
+  - psql -U postgres -c "CREATE EXTENSION postgis"
+  - psql -U postgres -c 'CREATE DATABASE conreality_test'
+script:
+  - make all
