@@ -1,7 +1,7 @@
 # https://docs.travis-ci.com/user/database-setup/
 language: c
 dist: trusty
-sudo: false
+sudo: required
 addons:
   postgresql: 9.6
   apt:
@@ -10,7 +10,7 @@ addons:
 services:
   - postgresql
 before_script:
-  - psql -U postgres -c "CREATE EXTENSION postgis"
+  - psql -U postgres -c 'CREATE EXTENSION postgis'
   - psql -U postgres -c 'CREATE DATABASE conreality_test'
 script:
   - make all
