@@ -5,14 +5,14 @@ sudo: required
 addons:
   postgresql: 9.6
   apt:
+    sources:
+      - sourceline: 'deb http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg main'
+        key_url: https://www.postgresql.org/media/keys/ACCC4CF8.asc
     packages:
       - postgresql-9.6-postgis-2.3
+      - postgresql-9.6-pllua
 services:
   - postgresql
-before_install:
-  - curl -s https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
-  - echo "deb http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg main" | sudo tee -a /etc/apt/sources.list
-  - sudo apt-get update -qq
 before_script:
   - psql -U postgres -c 'CREATE EXTENSION postgis'
   - psql -U postgres -c 'CREATE EXTENSION pllua'
