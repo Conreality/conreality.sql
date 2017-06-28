@@ -1,12 +1,11 @@
 SH   = bash
 PSQL = psql
 
-PACKAGE = conreality
-VERSION = `cat VERSION`
+PACKAGE := conreality
+VERSION := $(shell cat VERSION)
 
 SOURCES := $(wildcard src/*.sql)
-
-OUTPUTS = schema.sql
+OUTPUTS := schema.sql
 
 schema.sql: src/schema.sh $(SOURCES)
 	$(SH) $< > $@
