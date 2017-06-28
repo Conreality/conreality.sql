@@ -13,4 +13,4 @@ before_script:
   - psql -U postgres -c 'CREATE EXTENSION postgis'
   - psql -U postgres -c 'CREATE DATABASE conreality_test'
 script:
-  - make all && psql -U postgres -d conreality_test < schema.sql
+  - make all && psql -U postgres -d conreality_test -v ON_ERROR_STOP=1 < schema.sql
