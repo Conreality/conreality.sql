@@ -8,7 +8,7 @@ CREATE TABLE conreality.object_location (
   -- The object's current position (as 3D coordinates relative to its theater).
   position geometry(POINTZ,4326) NOT NULL,
   -- The object's current location (as GPS coordinates).
-  location geography(POINT,4326) NOT NULL
+  location geography(POINT,4326) NOT NULL,
   -- The measurement's radius of uncertainty (in meters).
   uncertainty float NULL
 );
