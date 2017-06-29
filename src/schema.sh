@@ -24,7 +24,7 @@ load camera.table.sql
 load camera_frame.table.sql
 load event.table.sql
 load message.table.sql
-load object_location.table.sql
+load object_motion.table.sql
 load player.table.sql
 load target.table.sql
 

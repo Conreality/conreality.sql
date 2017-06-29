@@ -1,9 +1,9 @@
-DROP TABLE IF EXISTS conreality.object_location CASCADE;
+DROP TABLE IF EXISTS conreality.object_motion CASCADE;
 
-CREATE TABLE conreality.object_location (
+CREATE TABLE conreality.object_motion (
   -- The object's unique identifier.
   uuid uuid NOT NULL PRIMARY KEY,
-  -- The object's timestamp (in Zulu time).
+  -- The motion's timestamp (in Zulu time).
   timestamp timestamp WITH TIME ZONE NOT NULL DEFAULT now(),
   -- The object's current position (as 3D coordinates relative to its theater).
   position geometry(POINTZ,4326) NOT NULL,
