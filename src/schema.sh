@@ -26,11 +26,11 @@ load player.table.sql
 load target.table.sql
 
 # Views
+load asset_object.view.sql
+load camera_object.view.sql
 load message_with_avatar.view.sql
-load object_asset.view.sql
-load object_camera.view.sql
-load object_player.view.sql
-load object_target.view.sql
+load player_object.view.sql
+load target_object.view.sql
 
 # Functions
 load distance_between.function.sql
