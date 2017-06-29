@@ -24,6 +24,9 @@ BEGIN
   EXECUTE format('GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA %I TO %I', 'conreality', player_uuid);
   EXECUTE format('GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA %I TO %I', 'conreality', player_uuid);
   EXECUTE format('GRANT EXECUTE ON ALL FUNCTIONS IN SCHEMA %I TO %I', 'conreality', player_uuid);
+  -- Permissions for the "public" schema:
+  EXECUTE format('GRANT USAGE ON SCHEMA %I TO %I', 'public', player_uuid);
+  EXECUTE format('GRANT EXECUTE ON ALL FUNCTIONS IN SCHEMA %I TO %I', 'public', player_uuid);
   -- Permissions for the "pllua" schema:
   EXECUTE format('GRANT USAGE ON SCHEMA %I TO %I', 'pllua', player_uuid);
   EXECUTE format('GRANT SELECT ON TABLE %I.%I TO %I', 'pllua', 'init', player_uuid);
