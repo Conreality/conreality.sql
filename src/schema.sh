@@ -9,6 +9,9 @@ echo "CREATE SCHEMA conreality;"; echo
 # Extensions
 load _extensions.sql
 
+# Data Types
+load measure_type.type.sql
+
 # Table references
 load binary.table.sql
 load theater.table.sql
