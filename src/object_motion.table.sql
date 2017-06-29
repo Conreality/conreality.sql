@@ -2,7 +2,7 @@ DROP TABLE IF EXISTS conreality.object_motion CASCADE;
 
 CREATE TABLE conreality.object_motion (
   -- The object's unique identifier.
-  uuid uuid NOT NULL PRIMARY KEY,
+  uuid uuid NOT NULL PRIMARY KEY REFERENCES conreality.object ON DELETE CASCADE,
 
   -- The measurement's timestamp (in Zulu time).
   timestamp timestamp WITH TIME ZONE NOT NULL DEFAULT now(),
