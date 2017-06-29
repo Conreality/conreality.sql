@@ -8,18 +8,22 @@ CREATE TABLE conreality.object_motion (
   timestamp timestamp WITH TIME ZONE NOT NULL DEFAULT now(),
 
   -- The measurement's type.
-  type conreality.measure_type NOT NULL DEFAULT 'measured',
+  type conreality.measure_type NOT NULL DEFAULT 'reported',
 
   -- The object's current location (as GPS coordinates).
-  location geography(POINT,4326) NOT NULL,
+  location geography(POINT,4326) NOT NULL
+    CHECK (ST_X(location::geometry) >= -180 AND
+           ST_X(location::geometry) <= +180 AND
+           ST_Y(location::geometry) >= -90  AND
+           ST_Y(location::geometry) <= +90),
 
   -- The object's current position (as 3D coordinates relative to its theater).
-  position geometry(POINTZ,4326) NOT NULL,
+  position geometry(POINTZ) NOT NULL,
   -- The measurement's estimated horizontal accuracy (in meters).
   position_accuracy real NULL,
 
   -- The object's current linear velocity (in meters/second over ground).
-  velocity geometry(POINTZ,4326) NULL,
+  velocity geometry(POINTZ) NULL,
   -- The measurement's estimated velocity accuracy (in meters/second).
   velocity_accuracy real NULL,
 
