@@ -1,14 +1,5 @@
 DROP TABLE IF EXISTS conreality.object CASCADE;
 
-DROP TYPE IF EXISTS conreality.object_type RESTRICT;
-
-CREATE TYPE conreality.object_type AS ENUM (
-  'asset',
-  'camera',
-  'player',
-  'target'
-);
-
 CREATE TABLE conreality.object (
   -- The object's unique identifier.
   uuid        uuid NOT NULL PRIMARY KEY,
