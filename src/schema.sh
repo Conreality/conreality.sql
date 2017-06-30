@@ -41,6 +41,7 @@ load target_object.view.sql
 load distance_between.function.sql
 load event_send.function.sql
 load message_send.function.sql
+load motion_report.function.sql
 load object_invert_mass.function.sql
 load object_is_accelerating.function.sql
 load object_is_active.function.sql
