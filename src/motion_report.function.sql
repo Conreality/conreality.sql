@@ -26,6 +26,7 @@ $$ LANGUAGE plpgsql VOLATILE PARALLEL UNSAFE;
 
 CREATE FUNCTION conreality.motion_report(location geography, accuracy real) RETURNS geometry AS $$
 DECLARE
+  wgs84_spheroid   text      := 'SPHEROID["WGS 84",6378137,298.257223563]';
   reporter_uuid    uuid      := session_user::uuid;             --
   theater_location geography;                                   -- GPS longitude/latitude of origin
   theater_origin   geometry  := conreality.point_3d(0, 0, 0);   -- 3D origin
@@ -40,7 +41,7 @@ BEGIN
     INNER JOIN conreality.object o ON t.uuid = o.theater
     WHERE o.uuid = reporter_uuid
     INTO theater_location;
-  SELECT ST_DistanceSphere(theater_location::geometry, location::geometry) INTO distance;
+  SELECT ST_DistanceSpheroid(theater_location::geometry, location::geometry, wgs84_spheroid::spheroid) INTO distance;
   SELECT ST_Azimuth(theater_location, location) INTO azimuth;
   SELECT round((sin(azimuth) * distance)::numeric, 3)::float INTO position_x;
   SELECT round((cos(azimuth) * distance)::numeric, 3)::float INTO position_y;
