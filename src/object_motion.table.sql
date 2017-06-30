@@ -2,7 +2,7 @@ DROP TABLE IF EXISTS conreality.object_motion CASCADE;
 
 CREATE TABLE conreality.object_motion (
   -- The object's unique identifier.
-  uuid uuid NOT NULL PRIMARY KEY REFERENCES conreality.object ON DELETE CASCADE,
+  uuid uuid NOT NULL REFERENCES conreality.object ON DELETE CASCADE,
 
   -- The measurement's timestamp (in Zulu time).
   timestamp timestamp WITH TIME ZONE NOT NULL DEFAULT now(),
@@ -30,5 +30,7 @@ CREATE TABLE conreality.object_motion (
   -- The object's bearing (in the range (0,360] degrees, as radians relative to north).
   bearing real NULL CHECK (bearing >= 0 AND bearing < 2*pi()),
   -- The measurement's estimated bearing accuracy (in the range (0,180] degrees, as radians).
-  bearing_accuracy real NULL CHECK (bearing >= 0 AND bearing < pi())
+  bearing_accuracy real NULL CHECK (bearing >= 0 AND bearing < pi()),
+
+  PRIMARY KEY (uuid, timestamp)
 );
