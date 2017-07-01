@@ -28,6 +28,7 @@ load event.table.sql
 load message.table.sql
 load object_motion.table.sql
 load player.table.sql
+load player_heartbeat.table.sql
 load target.table.sql
 
 # Views
