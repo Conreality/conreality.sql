@@ -51,6 +51,7 @@ load object_is_inactive.function.sql
 load object_is_located.function.sql
 load object_is_moving.function.sql
 load object_is_rotating.function.sql
+load object_location.function.sql
 load object_velocity.function.sql
 load player_deregister.function.sql
 load player_register.function.sql
