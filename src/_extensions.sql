@@ -1,7 +1,3 @@
--- Enable UUID generation
--- See: https://www.postgresql.org/docs/current/static/uuid-ossp.html
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
-
 -- Enable pgcrypto
 -- See: https://www.postgresql.org/docs/current/static/pgcrypto.html
 CREATE EXTENSION IF NOT EXISTS pgcrypto;
