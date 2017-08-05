@@ -39,6 +39,7 @@ load player_object.view.sql
 load target_object.view.sql
 
 # Functions
+load binary_import.function.sql
 load distance_between.function.sql
 load event_send.function.sql
 load message_send.function.sql
