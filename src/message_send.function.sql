@@ -1,4 +1,5 @@
 DROP FUNCTION IF EXISTS conreality.message_send(text) RESTRICT;
+DROP FUNCTION IF EXISTS conreality.message_send(bytea) RESTRICT;
 DROP FUNCTION IF EXISTS conreality.message_send(text, text) RESTRICT;
 
 CREATE FUNCTION conreality.message_send(message_text text) RETURNS bigint AS $$
@@ -6,6 +7,15 @@ DECLARE
   message_id bigint;
 BEGIN
   SELECT conreality.message_send(session_user, message_text) INTO STRICT message_id;
+  RETURN message_id;
+END;
+$$ LANGUAGE plpgsql VOLATILE PARALLEL UNSAFE;
+
+CREATE FUNCTION conreality.message_send(message_audio bytea) RETURNS bigint AS $$
+DECLARE
+  message_id bigint;
+BEGIN
+  SELECT 0 INTO STRICT message_id; -- TODO
   RETURN message_id;
 END;
 $$ LANGUAGE plpgsql VOLATILE PARALLEL UNSAFE;
