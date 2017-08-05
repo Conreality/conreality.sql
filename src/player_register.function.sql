@@ -6,7 +6,7 @@ DECLARE
   player_uuid uuid;
   player_nick text;
 BEGIN
-  SELECT uuid_generate_v4() INTO STRICT player_uuid;
+  SELECT gen_random_uuid() INTO STRICT player_uuid;
   SELECT 'Player #' || (SELECT COUNT(uuid) + 1 FROM conreality.player) INTO STRICT player_nick;
   PERFORM conreality.player_register(player_uuid, player_nick);
   RETURN player_uuid;
