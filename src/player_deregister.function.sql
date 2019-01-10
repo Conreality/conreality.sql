@@ -5,8 +5,8 @@ BEGIN
   DELETE FROM conreality.player p WHERE p.uuid = player_uuid;
   DELETE FROM conreality.object o WHERE o.uuid = player_uuid;
   -- Permissions for the "pllua" schema:
-  EXECUTE format('REVOKE SELECT ON TABLE %I.%I FROM %I', 'pllua', 'init', player_uuid);
-  EXECUTE format('REVOKE USAGE ON SCHEMA %I FROM %I', 'pllua', player_uuid);
+  --EXECUTE format('REVOKE SELECT ON TABLE %I.%I FROM %I', 'pllua', 'init', player_uuid);
+  --EXECUTE format('REVOKE USAGE ON SCHEMA %I FROM %I', 'pllua', player_uuid);
   -- Permissions for the "public" schema:
   EXECUTE format('REVOKE EXECUTE ON ALL FUNCTIONS IN SCHEMA %I FROM %I', 'public', player_uuid);
   EXECUTE format('REVOKE USAGE ON SCHEMA %I FROM %I', 'public', player_uuid);

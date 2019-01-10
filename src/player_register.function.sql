@@ -28,8 +28,8 @@ BEGIN
   EXECUTE format('GRANT USAGE ON SCHEMA %I TO %I', 'public', player_uuid);
   EXECUTE format('GRANT EXECUTE ON ALL FUNCTIONS IN SCHEMA %I TO %I', 'public', player_uuid);
   -- Permissions for the "pllua" schema:
-  EXECUTE format('GRANT USAGE ON SCHEMA %I TO %I', 'pllua', player_uuid);
-  EXECUTE format('GRANT SELECT ON TABLE %I.%I TO %I', 'pllua', 'init', player_uuid);
+  --EXECUTE format('GRANT USAGE ON SCHEMA %I TO %I', 'pllua', player_uuid);
+  --EXECUTE format('GRANT SELECT ON TABLE %I.%I TO %I', 'pllua', 'init', player_uuid);
 
   INSERT INTO conreality.object (uuid, type, label) VALUES (player_uuid, 'player', player_nick);
   INSERT INTO conreality.player (uuid, nick) VALUES (player_uuid, player_nick);
