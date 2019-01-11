@@ -12,7 +12,7 @@ CREATE TABLE conreality.asset (
   -- The asset's avatar image.
   avatar   bigint NULL REFERENCES conreality.binary ON DELETE SET NULL,
   -- The asset's deployed software version.
-  version  varchar(5) NULL
+  version  varchar(8) NULL CHECK (length(version) >= 5)
 );
 
 ALTER TABLE conreality.asset

@@ -8,7 +8,7 @@ CREATE TABLE conreality.player_heartbeat (
   timestamp timestamp WITH TIME ZONE NOT NULL DEFAULT now(),
 
   -- The measurement's value.
-  measurement real NOT NULL,
+  measurement real NOT NULL CHECK (measurement > 0),
 
   PRIMARY KEY (uuid, timestamp)
 );

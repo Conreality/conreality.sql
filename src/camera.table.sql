@@ -8,7 +8,7 @@ CREATE TABLE conreality.camera (
   -- The camera's image format.
   format     varchar(15) NULL,
   -- The camera's frame rate (per second).
-  fps        int2 NULL,
+  fps        int2 NULL CHECK (fps > 0),
   -- The camera's f-number (the f/N focal ratio).
-  fnumber    int2 NULL
+  fnumber    int2 NULL CHECK (fnumber > 0)
 );

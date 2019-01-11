@@ -11,11 +11,11 @@ CREATE TABLE conreality.object (
   -- The object's designated label.
   label       varchar(31) NULL CHECK (label <> ''),
   -- The object's current orientation (in radians relative to north).
-  orientation real NULL,
+  orientation real NULL CHECK (orientation >= 0),
   -- The object's estimated mass (in kilograms).
-  mass        real NULL,
+  mass        real NULL CHECK (mass > 0),
   -- The object's determined radius (in meters).
-  radius      real NULL,
+  radius      real NULL CHECK (radius > 0),
   -- The object's estimated color (as a 24-bit RGB value).
   color       int4 NULL
 );
