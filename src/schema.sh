@@ -14,6 +14,7 @@ load binary_type.type.sql
 load entity_type.type.sql
 load measure_type.type.sql
 load object_type.type.sql
+load state_action.type.sql
 
 # Table references
 load binary.table.sql
@@ -31,6 +32,7 @@ load message.table.sql
 load object_motion.table.sql
 load player.table.sql
 load player_heartbeat.table.sql
+load state.table.sql
 load target.table.sql
 
 # Views
