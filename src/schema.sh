@@ -33,6 +33,7 @@ load player.table.sql
 load player_heartbeat.table.sql
 load state.table.sql
 load target.table.sql
+load unit.table.sql
 
 # Views
 load asset_object.view.sql

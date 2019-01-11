@@ -1,6 +1,6 @@
 DROP TABLE IF EXISTS conreality.object CASCADE;
 
--- An entity with corporeal existence.
+-- A corporeal entity, aka object.
 CREATE TABLE conreality.object (
   -- The object's sequential identifier (ID).
   id          bigint NOT NULL PRIMARY KEY REFERENCES conreality.entity ON DELETE CASCADE,

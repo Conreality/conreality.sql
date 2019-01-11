@@ -1,5 +1,6 @@
 DROP TABLE IF EXISTS conreality.entity CASCADE;
 
+-- An abstract entity.
 CREATE TABLE conreality.entity (
   -- The entity's sequential identifier (ID).
   id   bigserial NOT NULL PRIMARY KEY,
