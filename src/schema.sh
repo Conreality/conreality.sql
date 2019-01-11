@@ -11,11 +11,13 @@ load _extensions.sql
 
 # Data Types
 load binary_type.type.sql
+load entity_type.type.sql
 load measure_type.type.sql
 load object_type.type.sql
 
 # Table references
 load binary.table.sql
+load entity.table.sql
 load theater.table.sql
 load group.table.sql
 load object.table.sql
