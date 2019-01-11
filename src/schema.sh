@@ -13,7 +13,6 @@ load _extensions.sql
 load binary_type.type.sql
 load entity_type.type.sql
 load measure_type.type.sql
-load object_type.type.sql
 load state_action.type.sql
 
 # Table references
