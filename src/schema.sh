@@ -70,3 +70,4 @@ load point_gps.function.sql
 load session_start.function.sql
 load session_terminate.function.sql
 load state.function.sql
+load state_ongoing.function.sql
