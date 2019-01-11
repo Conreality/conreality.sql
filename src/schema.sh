@@ -15,6 +15,9 @@ load entity_type.type.sql
 load measure_type.type.sql
 load state_action.type.sql
 
+# Trigger functions
+load state_check.function.sql
+
 # Table references
 load binary.table.sql
 load entity.table.sql
@@ -66,3 +69,4 @@ load point_3d.function.sql
 load point_gps.function.sql
 load session_start.function.sql
 load session_terminate.function.sql
+load state.function.sql
