@@ -1,7 +1,7 @@
 DROP TABLE IF EXISTS conreality.binary CASCADE;
 
 CREATE TABLE conreality.binary (
-  -- The binary's sequential identifier.
+  -- The binary's sequential identifier (ID).
   id bigserial NOT NULL PRIMARY KEY,
   -- The binary's unique identifier (SHA-256 fingerprint).
   sha256 bytea NOT NULL CHECK (length(sha256) = 32) UNIQUE,

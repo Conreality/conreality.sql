@@ -1,14 +1,16 @@
 DROP TABLE IF EXISTS conreality.message CASCADE;
 
 CREATE TABLE conreality.message (
-  -- The message's sequential identifier.
+  -- The message's sequential identifier (ID).
   id        bigserial NOT NULL PRIMARY KEY,
-  -- The message's timestamp (in Zulu time).
+  -- The message timestamp (in Zulu time).
   timestamp timestamp WITH TIME ZONE NOT NULL DEFAULT now(),
-  -- The sender of the message (a player or asset; a zero UUID indicates the system).
-  sender    uuid NOT NULL REFERENCES conreality.object ON DELETE CASCADE,
-  -- The message's contents as text.
+  -- The message sender (a player or asset; NULL indicates the system).
+  sender    bigint NULL REFERENCES conreality.entity ON DELETE CASCADE,
+  -- The message recipient (a player or asset; NULL indicates everyone).
+  recipient bigint NULL REFERENCES conreality.entity ON DELETE CASCADE,
+  -- The message contents as text.
   text      text NULL,
-  -- The message's contents as audio.
+  -- The message contents as audio.
   audio     bigint NULL REFERENCES conreality.binary ON DELETE SET NULL
 );

@@ -1,14 +1,14 @@
 DROP TABLE IF EXISTS conreality.event RESTRICT;
 
 CREATE TABLE conreality.event (
-  -- The event's sequential identifier.
+  -- The event's sequential identifier (ID).
   id        bigserial NOT NULL PRIMARY KEY,
-  -- The event's timestamp (in Zulu time).
+  -- The event timestamp (in Zulu time).
   timestamp timestamp WITH TIME ZONE NOT NULL DEFAULT now(),
   -- The event's predicate (an action or verb).
   predicate varchar(63) NOT NULL CHECK (predicate <> ''),
   -- The subject of the predicate.
-  subject   uuid NOT NULL REFERENCES conreality.object ON DELETE CASCADE,
+  subject   bigint NOT NULL REFERENCES conreality.entity ON DELETE CASCADE,
   -- The object of the predicate.
-  object    uuid NULL REFERENCES conreality.object ON DELETE SET NULL
+  object    bigint NULL REFERENCES conreality.entity ON DELETE SET NULL
 );
