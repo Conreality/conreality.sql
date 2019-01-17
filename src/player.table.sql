@@ -4,7 +4,7 @@ CREATE TABLE conreality.player (
   -- The player's sequential identifier (ID).
   id       bigint NOT NULL PRIMARY KEY REFERENCES conreality.object ON DELETE CASCADE,
   -- The player's nickname.
-  nick     varchar(31) NOT NULL CHECK (nick <> '') UNIQUE,
+  nick     varchar(63) NOT NULL CHECK (nick <> '') UNIQUE,
   -- The player's full name.
   name     varchar(63) NULL CHECK (name <> ''),
   -- The player's military rank.

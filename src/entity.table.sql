@@ -7,5 +7,7 @@ CREATE TABLE conreality.entity (
   -- The entity's universally unique identifier (UUID).
   uuid uuid NOT NULL DEFAULT gen_random_uuid() UNIQUE,
   -- The entity's type.
-  type conreality.entity_type NOT NULL
+  type conreality.entity_type NOT NULL,
+  -- The entity's name.
+  name varchar(63) NULL CHECK (name <> '') UNIQUE
 );
