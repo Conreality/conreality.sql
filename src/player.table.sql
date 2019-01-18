@@ -5,8 +5,6 @@ CREATE TABLE conreality.player (
   id       bigint NOT NULL PRIMARY KEY REFERENCES conreality.object ON DELETE CASCADE,
   -- The player's nickname.
   nick     varchar(63) NOT NULL CHECK (nick <> '') UNIQUE,
-  -- The player's full name.
-  name     varchar(63) NULL CHECK (name <> ''),
   -- The player's military rank.
   rank     varchar(63) NULL CHECK (rank <> ''),
   -- The player's IPv4/IPv6 address.
@@ -16,3 +14,6 @@ CREATE TABLE conreality.player (
   -- The player's primary language (ISO 639-1 code).
   language varchar(5) NULL CHECK (length(language) = 2 OR length(language) = 5)
 );
+
+ALTER TABLE conreality.player
+  ALTER COLUMN nick SET STORAGE PLAIN;

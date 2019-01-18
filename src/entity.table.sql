@@ -11,3 +11,7 @@ CREATE TABLE conreality.entity (
   -- The entity's name.
   name varchar(63) NULL CHECK (name <> '') UNIQUE
 );
+
+ALTER TABLE conreality.entity
+  ALTER COLUMN uuid SET STORAGE PLAIN,
+  ALTER COLUMN name SET STORAGE PLAIN;
