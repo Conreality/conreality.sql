@@ -9,6 +9,8 @@ CREATE TABLE conreality.message (
   sender    bigint NULL REFERENCES conreality.entity ON DELETE CASCADE,
   -- The message recipient (a player or asset; NULL indicates everyone).
   recipient bigint NULL REFERENCES conreality.entity ON DELETE CASCADE,
+  -- The message language, if known (ISO 639-1 code).
+  language  varchar(5) NULL CHECK (length(language) = 2 OR length(language) = 5),
   -- The message contents as text.
   text      text NULL,
   -- The message contents as audio.
