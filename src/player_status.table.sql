@@ -7,7 +7,7 @@ CREATE TABLE conreality.player_status (
   timestamp timestamp WITH TIME ZONE NOT NULL DEFAULT now(),
   player    bigint NOT NULL REFERENCES conreality.player ON DELETE CASCADE,
   state     varchar(16) NULL CHECK (state <> ''),
-  latitude  double NULL,
-  longitude double NULL,
+  latitude  double precision NULL,
+  longitude double precision NULL,
   altitude  real NULL
 );
