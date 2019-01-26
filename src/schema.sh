@@ -33,7 +33,8 @@ load event.table.sql
 load message.table.sql
 load object_motion.table.sql
 load player.table.sql
-load player_heartbeat.table.sql
+load player_status.table.sql
+#load player_heartbeat.table.sql
 load state.table.sql
 load target.table.sql
 load unit.table.sql
