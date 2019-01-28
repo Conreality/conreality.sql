@@ -1,6 +1,4 @@
-DROP FUNCTION IF EXISTS conreality.state_ongoing() RESTRICT;
-
-CREATE FUNCTION conreality.state_ongoing() RETURNS boolean AS $$
+CREATE OR REPLACE FUNCTION conreality.state_ongoing() RETURNS boolean AS $$
 DECLARE
   state conreality.state_action;
   result boolean;

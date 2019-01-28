@@ -1,6 +1,4 @@
-DROP FUNCTION IF EXISTS conreality.state_check() CASCADE;
-
-CREATE FUNCTION conreality.state_check() RETURNS trigger AS $$
+CREATE OR REPLACE FUNCTION conreality.state_check() RETURNS trigger AS $$
 DECLARE
   old_state conreality.state_action;
   new_state conreality.state_action;

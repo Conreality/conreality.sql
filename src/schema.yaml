@@ -1,0 +1,21 @@
+---
+event.table.sql: entity.table.sql
+event_notify.function.sql:
+event_notify.trigger.sql: event.table.sql event_notify.function.sql
+event_send.function.sql:
+message.table.sql: binary.table.sql entity.table.sql
+message_notify.function.sql:
+message_notify.trigger.sql: message.table.sql message_notify.function.sql
+message_send.function.sql:
+message_with_avatar.view.sql:
+player_status.table.sql: player.table.sql
+player_status_notify.function.sql:
+player_status_notify.trigger.sql: player_status.table.sql player_status_notify.function.sql
+state.function.sql: state_action.type.sql
+state.table.sql: state_action.type.sql
+state_action.type.sql:
+state_check.function.sql: state_action.type.sql
+state_check.trigger.sql: state.table.sql state_check.function.sql
+state_notify.function.sql:
+state_notify.trigger.sql: state.table.sql state_notify.function.sql
+state_ongoing.function.sql: state_action.type.sql
