@@ -9,5 +9,6 @@ CREATE TABLE conreality.player_status (
   state     varchar(16) NULL CHECK (state <> ''),
   latitude  double precision NULL,
   longitude double precision NULL,
-  altitude  real NULL
+  altitude  real NULL,
+  heartrate smallint NULL
 );
